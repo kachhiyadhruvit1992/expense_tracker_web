@@ -1,0 +1,189 @@
+:root {
+  --background: #f2f2f7;
+  --paper: rgba(255, 255, 255, 0.96);
+  --ink: #1c1c1e;
+  --muted: #8e8e93;
+  --line: rgba(60, 60, 67, 0.12);
+  --accent: #007aff;
+  --accent-soft: rgba(0, 122, 255, 0.12);
+  --shadow: rgba(0, 0, 0, 0.06);
+  --max-width: 860px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--ink);
+  line-height: 1.65;
+  background:
+    radial-gradient(circle at top left, rgba(0, 122, 255, 0.1), transparent 28rem),
+    linear-gradient(180deg, #ffffff 0%, var(--background) 100%);
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--accent);
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.hero,
+.content-card {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    white-space: normal;
+  }
+}
+
+.lede {
+  max-width: 42rem;
+  margin: 0.75rem 0 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.nav-link.current {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.content-card {
+  padding: 1.4rem;
+  background: var(--paper);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px var(--shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.notice {
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0.8rem;
+  background: var(--accent-soft);
+  color: #1a1a1a;
+}
+
+.meta {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+section+section {
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.45rem;
+}
+
+h3 {
+  margin: 1rem 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0 0 0.9rem;
+}
+
+ul {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.2rem;
+}
+
+li+li {
+  margin-top: 0.35rem;
+}
+
+.contact-block {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: rgba(60, 60, 67, 0.05);
+}
+
+@media (min-width: 900px) {
+  .page-shell {
+    padding-top: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.5rem;
+  }
+
+  .content-card {
+    padding: 2rem 2.5rem;
+  }
+}
